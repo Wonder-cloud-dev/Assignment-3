@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="NarrowItDownApp">
+<head>
+    <!-- Include AngularJS library -->
+    <script src="angular.min.js"></script>
+    <!-- Include your app.js file -->
+    <script src="app.js"></script>
+</head>
+<body ng-controller="NarrowItDownController as narrowCtrl">
+    <input type="text" ng-model="narrowCtrl.searchTerm" placeholder="Search term">
+    <button ng-click="narrowCtrl.narrowItDown()">Narrow It Down For Me!</button>
+
+    <!-- Display found items using directive -->
+    <found-items items="narrowCtrl.foundItems" on-remove="narrowCtrl.removeItem(index)"></found-items>
+</body>
+</html>
